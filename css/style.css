@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+*{
+  padding: 0;
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+}
+
+.wrapper {
+  width: 80vw;
+  height: 68.6vw;
+  background-color: #0e0716;
+  margin:auto;
+  margin-top: 2rem;
+}
+
+cf-board {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+
+  padding: 1rem;
+  width: 100%;
+  height: 100%;
+  background-color: #4a71f0;
+  border-bottom: 2px solid black;
+}
+
+#title {
+  background-color: #4a71f0;
+  color: #fbee75;
+  padding: 1rem;
+  text-align: center;
+  width: 100%;
+
+}
+
+cf-column {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+  width: 10.43vw;
+  height: 100%;
+
+  opacity: .7;
+}
+
+cf-column:hover {
+  opacity: 1;
+}
+
+cf-space {
+  display: block;
+  width: 100%;
+  height: 10.43vw;
+  background-image: url("../images/cf-space-fill.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.filled-red {
+  background-image: url("../images/cf-space-red.png");
+}
+
+.filled-yellow {
+  background-image: url("../images/cf-space-yellow.png");
+}
