@@ -4,6 +4,7 @@
   padding: 0;
   margin: 0;
   font-family: 'Lato', sans-serif;
+  box-sizing: border-box;
 }
 
 .wrapper {
@@ -22,8 +23,12 @@ cf-board {
   padding: 1rem;
   width: 100%;
   height: 100%;
+
   background-color: #4a71f0;
-  border-bottom: 2px solid black;
+
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  background-clip: border-box;
 }
 
 #title {
@@ -43,6 +48,7 @@ cf-column {
   width: 10.43vw;
   height: 100%;
 
+  border-radius: 1rem;
   opacity: .7;
 }
 
@@ -65,4 +71,11 @@ cf-space {
 
 .filled-yellow {
   background-image: url("../images/cf-space-yellow.png");
+}
+
+@media all and (min-width: 860px) {
+  .wrapper {
+    width: 49vw;
+    height: 41vw;
+  }
 }
