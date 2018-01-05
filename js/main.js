@@ -2,15 +2,11 @@
 // Connect Four
 /* eslint semi: ["error", "always"] */
 
-import * as Grid from 'grid.js';
-
 const grid = document.querySelector('cf-board');
 const players = ['red', 'yellow'];
 
 let g = new Grid();
 let turn = 0;
-let redPlays = [];
-let yellowPlays = [];
 
 grid.addEventListener('click', function (event) {
   let target = event.target;
@@ -25,13 +21,8 @@ grid.addEventListener('click', function (event) {
 function setSpace (col) {
   let lastSpace = getUnfilledSpace(col);
   lastSpace.className = 'filled-' + players[turn];
-  if (turn === 0) {
-    redPlays.push(numericSpace([lastSpace.id, col.id]));
-  } else {
-    yellowPlays.push(numericSpace([lastSpace.id, col.id]));
-  }
+  g.update(players[turn], numericSpace([lastSpace.id, col.id]));
   turn = (turn + 1) % players.length;
-  g.update(redPlays, yellowPlays);
 }
 
 function numericSpace (space) {
@@ -47,4 +38,38 @@ function getUnfilledSpace (col) {
       return children[i];
     }
   }
+}
+
+// ----------- Constructor Grid Function -------------\\
+
+function Grid () {
+  this.redPlays = [];
+  this.yellowPlays = [];
+
+  this.update = function update (player, play) {
+    if (player === 'red') {
+      updateArray(this.redPlays, play);
+    } else if (player === 'yellow') {
+      updateArray(this.yellowPlays, play);
+    }
+  };
+
+  this.checkWin = check();
+}
+
+// ----------- Grid Functionality -------------\\
+
+function updateArray (array, play) {
+  array.push(play);
+}
+
+function check () {
+  
+}
+
+// ----------- Constructor Cell Function --------------\\
+
+function Cell (r, c) {
+  this.r = r;
+  this.c = c;
 }
