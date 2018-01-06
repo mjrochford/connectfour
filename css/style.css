@@ -31,7 +31,7 @@ cf-board {
   background-clip: border-box;
 }
 
-#title {
+.title {
   background-color: #4a71f0;
   color: #fbee75;
   padding: 1rem;
