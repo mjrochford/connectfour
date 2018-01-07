@@ -19,7 +19,7 @@ grid.addEventListener('click', function (event) {
     } else if (target.tagName === 'CF-COLUMN') {
       setSpace(target);
     }
-    // gameOver = g.checkWin();
+    gameOver = g.checkWin();
   } else {
     reset();
   }
@@ -87,6 +87,7 @@ function Grid () {
 
 function updateArray (array, play) {
   array.push(play);
+  array.sort();
 }
 
 function check (playArray, direction) {
